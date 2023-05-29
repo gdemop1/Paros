@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Naoussa, Paros Travel Plan</title>
+  <style>
+    body {
+      background: beige;
+      background-repeat: repeat;
+      color: RoyalBlue;
+      font-family: 'GFS Didot', serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    h1 {
+      text-align: center;
+      padding: 30px;
+    }
+    
+    .dropdown {
+      text-align: center;
+      margin-top: 50px;
+    }
+    
+    .dropdown select {
+      background-color: white;
+      color: royalblue;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+    }
+    
+    .dropdown select option {
+      padding: 10px;
+    }
+    
+    .select-button {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .select-button button {
+      background-color: royalblue;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .category {
+      display: none;
+      margin-top: 50px;
+    }
+    
+    .category h2 {
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Naoussa, Paros Travel Plan</h1>
+  
+  <div class="dropdown">
+    <select onchange="showCategory(this.value);">
+      <option value="" selected disabled>Select an option</option>
+      <option value="drink">Drink</option>
+      <option value="dine">Dine</option>
+      <option value="dive">Dive</option>
+    </select>
+  </div>
+  
+  
+  <div id="drink" class="category">
+  <h2>Stay thirsty my friends</h2>
+  <ul>
+    <li>
+      <h3>Prive Bar</h3>
+      <p>Prive Bar is a popular nightlife destination in Naoussa, known for its energetic atmosphere and vibrant music. With its stylish interior and outdoor terrace, Prive Bar offers a great place to dance and enjoy a wide selection of cocktails, shots, and spirits. The lively ambiance and live DJ performances make it a go-to spot for those looking for a fun night out.</p>
+    </li>
+    <li>
+      <h3>Kalypso Club</h3>
+      <p>Kalypso Club is a renowned club located near the Naoussa harbor. It features a spacious dance floor, state-of-the-art sound system, and a lineup of talented DJs. The club offers a diverse range of music genres, including electronic, house, and mainstream hits. With its vibrant atmosphere and energetic crowd, Kalypso Club guarantees an unforgettable night of dancing and entertainment.</p>
+    </li>
+    <li>
+      <h3>Vanilla Sky Bar</h3>
+      <p>Vanilla Sky Bar is a stylish rooftop bar that offers panoramic views of Naoussa and the Aegean Sea. With its modern decor and chic ambiance, it's the perfect place to enjoy cocktails and drinks with a sophisticated touch. The bar features a curated menu of signature cocktails and an extensive selection of wines and spirits. Vanilla Sky Bar provides a relaxed yet trendy setting for socializing and enjoying the night.</p>
+    </li>
+  </ul>
+</div>
+
+  
+  <div id="dine" class="category">
+  <h2>So you hungry huh?</h2>
+  <ul>
+    <li>
+      <h3>Taverna Soso</h3>
+      <p>Taverna Soso is a charming family-owned restaurant located in the heart of Naoussa. They offer traditional Greek cuisine with a focus on fresh seafood. The menu includes a variety of delicious dishes such as grilled octopus, moussaka, and baklava. The warm and welcoming atmosphere combined with the authentic flavors make it a popular choice among locals and tourists alike.</p>
+    </li>
+    <li>
+      <h3>Minoa Restaurant</h3>
+      <p>Minoa Restaurant is a waterfront eatery known for its stunning views and delectable Greek dishes. Situated along the Naoussa harbor, it offers a romantic setting for a memorable dining experience. The menu features a range of Mediterranean specialties, including fresh fish, souvlaki, and traditional Greek salads. The friendly staff and scenic backdrop make it a must-visit restaurant in Naoussa.</p>
+    </li>
+    <li>
+      <h3>Yemeni Restaurant</h3>
+      <p>Yemeni Restaurant is a hidden gem tucked away in the narrow streets of Naoussa. This cozy restaurant specializes in Middle Eastern cuisine, serving dishes inspired by Yemeni traditions. From flavorful lamb kebabs to aromatic rice dishes, Yemeni Restaurant offers a unique and delightful culinary experience. The intimate ambiance and attentive service create a memorable dining atmosphere.</p>
+    </li>
+  </ul>
+</div>
+
+  
+  <div id="dive" class="category">
+  <h2>Lets go see some girls in bikinis</h2>
+  <ul>
+    <li>
+      <h3>Agios Ioannis Beach</h3>
+      <p>Agios Ioannis Beach is a picturesque sandy beach located just outside Naoussa. It offers crystal-clear turquoise waters and a tranquil atmosphere. The beach is surrounded by stunning cliffs and provides a great spot for swimming and sunbathing.</p>
+    </li>
+    <li>
+      <h3>Kolymbithres Beach</h3>
+      <p>Kolymbithres Beach is known for its unique rock formations that have been sculpted by the sea. This beach offers clear waters and small coves, creating a beautiful setting for swimming and snorkeling. The beach also provides sunbeds and umbrellas for visitors.</p>
+    </li>
+    <li>
+      <h3>Piperi Beach</h3>
+      <p>Piperi Beach is a small sandy beach located near the port of Naoussa. It offers a calm and relaxing atmosphere, making it an ideal spot for swimming and sunbathing. The beach provides easy access to various waterfront cafes and taverns where you can enjoy a refreshing drink or a delicious meal.</p>
+    </li>
+  </ul>
+</div>
+
+  <script>
+    function showCategory(category) {
+      var categories = document.getElementsByClassName("category");
+      for (var i = 0; i < categories.length; i++) {
+        categories[i].style.display = "none";
+      }
+      
+      if (category) {
+        document.getElementById(category).style.display = "block";
+        document.getElementsByClassName("select-button")[0].style.display = "block";
+      }
+      else {
+        document.getElementsByClassName("select-button")[0].style.display = "none";
+      }
+    }
+    
+    function selectOption() {
+      var selectedOption = document.querySelector('select').value;
+      window.location.href = "#" + selectedOption;
+    }
+  </script>
+</body>
+</html>
